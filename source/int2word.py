@@ -83,4 +83,7 @@ def writter(path):
     else:
         result['extenso'] = thousand + ' e ' + result['extenso']
 
+    if number['sign'] == 'minus' and result['extenso'] != 'zero':
+        result['extenso'] = 'menos ' + result['extenso']
+
     return result

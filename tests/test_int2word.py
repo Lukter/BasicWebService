@@ -136,8 +136,13 @@ assert(result == {'extenso': 'vinte mil duzentos e um'})
 result = int2word.writter('25201')
 assert(result == {'extenso': 'vinte e cinco mil duzentos e um'})
 
-
 result = int2word.writter('10000')
 assert(result == {'extenso': 'dez mil'})
+
+result = int2word.writter('-00000')
+assert(result == {'extenso': 'zero'})
+
+result = int2word.writter('-99999')
+assert(result == {'extenso': 'menos noventa e nove mil novecentos e noventa e nove'})
 
 print('PASSED ALL TESTS!')
