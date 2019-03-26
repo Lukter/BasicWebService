@@ -1,28 +1,39 @@
 #!/usr/bin/python
 
 import int2word
+import logging
+import os
 from flask import Flask, jsonify
 
 app = Flask(__name__)
 
+def log():
+    logger = logging.getLogger('server')
+    hdlr = logging.FileHandler(os.path.join(os.path.dirname(__file__),
+                               'server.log'))
+    formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
+    hdlr.setFormatter(formatter)
+    logger.addHandler(hdlr)
+    logger.setLevel(logging.INFO)
+    return logger
 
 def validatePath(path):
     try:
         path_as_integer = int(path)
-        print('Path is ok!')
+        logger.info("Path is ok!")
         return True
     except ValueError:
-        print('Invalid path! Cannot resolve...')
+        logger.info('Invalid path! Cannot resolve...')
         return False
 
 
 def validateRange(path):
     path_as_integer = int(path)
     if -99999 <= path_as_integer <= 99999:
-        print('Number in a valid range!')
+        logger.info('Number in a valid range!')
         return True
     else:
-        print('Invalid number request! Cannot resolve...')
+        logger.info('Invalid number request! Cannot resolve...')
         return False
 
 
@@ -39,6 +50,7 @@ def index(path):
     else:
         return jsonify({"ERRO": 'Cannot resolve'})
 
-
+logger = log()
+logger.info("Server Online")
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
