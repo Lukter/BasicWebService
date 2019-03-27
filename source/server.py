@@ -7,6 +7,7 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
 
+
 def log():
     logger = logging.getLogger('server')
     hdlr = logging.FileHandler(os.path.join(os.path.dirname(__file__),
@@ -16,6 +17,7 @@ def log():
     logger.addHandler(hdlr)
     logger.setLevel(logging.INFO)
     return logger
+
 
 def validatePath(path):
     try:
@@ -41,6 +43,7 @@ def validateRequest(path):
 
     return validatePath(path) and validateRange(path)
 
+
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def index(path):
@@ -49,6 +52,7 @@ def index(path):
         return jsonify(int2word.writter(path))
     else:
         return jsonify({"ERRO": 'Cannot resolve'})
+
 
 logger = log()
 logger.info("Server Online")

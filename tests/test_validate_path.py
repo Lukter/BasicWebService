@@ -104,7 +104,7 @@ result = requests.get('http://localhost:5000/01200')
 assert(result.json() == {'extenso': 'mil e duzentos'})
 
 result = requests.get('http://localhost:5000/01201')
-assert(result.json() == {'extenso': 'mil duzentos e um'})
+assert(result.json() == {'extenso': 'mil e duzentos e um'})
 
 result = requests.get('http://localhost:5000/02000')
 assert(result.json() == {'extenso': 'dois mil'})
@@ -125,17 +125,17 @@ result = requests.get('http://localhost:5000/02101')
 assert(result.json() == {'extenso': 'dois mil cento e um'})
 
 result = requests.get('http://localhost:5000/02201')
-assert(result.json() == {'extenso': 'dois mil duzentos e um'})
+assert(result.json() == {'extenso': 'dois mil e duzentos e um'})
 
 result = requests.get('http://localhost:5000/11201')
-assert(result.json() == {'extenso': 'onze mil duzentos e um'})
+assert(result.json() == {'extenso': 'onze mil e duzentos e um'})
 
 
 result = requests.get('http://localhost:5000/20201')
-assert(result.json() == {'extenso': 'vinte mil duzentos e um'})
+assert(result.json() == {'extenso': 'vinte mil e duzentos e um'})
 
 result = requests.get('http://localhost:5000/25201')
-assert(result.json() == {'extenso': 'vinte e cinco mil duzentos e um'})
+assert(result.json() == {'extenso': 'vinte e cinco mil e duzentos e um'})
 
 result = requests.get('http://localhost:5000/10000')
 assert(result.json() == {'extenso': 'dez mil'})
@@ -144,7 +144,7 @@ result = requests.get('http://localhost:5000/-00000')
 assert(result.json() == {'extenso': 'zero'})
 
 result = requests.get('http://localhost:5000/-99999')
-assert(result.json() == {'extenso': 'menos noventa e nove mil novecentos e noventa e nove'})
+assert(result.json() == {'extenso': 'menos noventa e nove mil e novecentos e noventa e nove'})
 
 
 result = requests.get('http://localhost:5000/1')

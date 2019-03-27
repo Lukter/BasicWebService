@@ -79,9 +79,7 @@ def writter(path):
     elif result['extenso'] != '' and thousand == '':
         pass
     elif hundred != '' and thousand != '':
-        if result['extenso'].find('cento') != -1:
-            result['extenso'] = thousand + ' ' + result['extenso']
-        elif result['extenso'].find(' e ') != -1:
+        if result['extenso'].find('cento ') != -1:
             result['extenso'] = thousand + ' ' + result['extenso']
         else:
             result['extenso'] = thousand + ' e ' + result['extenso']

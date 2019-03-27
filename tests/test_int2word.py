@@ -102,7 +102,7 @@ result = int2word.writter('01200')
 assert(result == {'extenso': 'mil e duzentos'})
 
 result = int2word.writter('01201')
-assert(result == {'extenso': 'mil duzentos e um'})
+assert(result == {'extenso': 'mil e duzentos e um'})
 
 result = int2word.writter('02000')
 assert(result == {'extenso': 'dois mil'})
@@ -123,18 +123,18 @@ result = int2word.writter('02101')
 assert(result == {'extenso': 'dois mil cento e um'})
 
 result = int2word.writter('02201')
-assert(result == {'extenso': 'dois mil duzentos e um'})
+assert(result == {'extenso': 'dois mil e duzentos e um'})
 
 result = int2word.writter('11201')
-assert(result == {'extenso': 'onze mil duzentos e um'})
+assert(result == {'extenso': 'onze mil e duzentos e um'})
 
 
 result = int2word.writter('20201')
-assert(result == {'extenso': 'vinte mil duzentos e um'})
+assert(result == {'extenso': 'vinte mil e duzentos e um'})
 
 
 result = int2word.writter('25201')
-assert(result == {'extenso': 'vinte e cinco mil duzentos e um'})
+assert(result == {'extenso': 'vinte e cinco mil e duzentos e um'})
 
 result = int2word.writter('10000')
 assert(result == {'extenso': 'dez mil'})
@@ -143,6 +143,6 @@ result = int2word.writter('-00000')
 assert(result == {'extenso': 'zero'})
 
 result = int2word.writter('-99999')
-assert(result == {'extenso': 'menos noventa e nove mil novecentos e noventa e nove'})
+assert(result == {'extenso': 'menos noventa e nove mil e novecentos e noventa e nove'})
 
 print('PASSED ALL TESTS!')
